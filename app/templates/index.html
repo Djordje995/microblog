@@ -1,0 +1,19 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Dobrodosli na Microblog</title>
+        {% endif %}
+    </head>
+    <body>
+    {% extends "base.html" %}
+
+    {% block content %}
+    <h1>Zdravo, {{ user.username }}!</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} kaze: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}
+    </body>
+</html>
