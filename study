@@ -1,0 +1,11 @@
+Flask_wtf
+WTForms
+validators
+DataRedquired
+novalidate
+form.hidden.tag
+flash()
+redirect()
+get_flashed_message()
+url_for()
+jinja2
