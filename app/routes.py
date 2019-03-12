@@ -7,20 +7,13 @@ from app.forms import LoginForm
 
 def index():
     user = {'username': 'Djordje'}
-    posts = [
-        {
-            'author': {'username': 'Nikola'},
-            'body': 'Lep dan danas!'
-        },
-        {
-            'author': {'username': 'Andjela '},
-            'body': 'Ljubavi nema te ceo dan! ' 
-        }
-    ]
+    post = {'post': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'}
+    return render_template('index.html', title='Home', user=user)
 
-    return render_template('index.html', title='Home', user=user, posts=posts)
+
+
 # Login
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET','POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -29,3 +22,9 @@ def login():
         return redirect(url_for('index'))
     return render_template('login.html', title='Sign In', form=form)
 
+# about
+#
+# @app.route('/about')
+# def about():
+#     # return redirect(url_for('about'))
+#     return render_template('about.html', title='About', user='user', post='post')
